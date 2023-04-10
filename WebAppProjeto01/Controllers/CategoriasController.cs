@@ -23,5 +23,11 @@ namespace WebAppProjeto01.Controllers
         {
             return View(categorias);
         }
+
+        // GET: Categorias
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
