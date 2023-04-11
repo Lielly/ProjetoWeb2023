@@ -29,5 +29,49 @@ namespace WebAppProjeto01.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Categoria categoria)
+        {
+            categoria.CategoriaId = categorias.Select(m => m.CategoriaId).Max() + 1;            
+            categorias.Add(categoria);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(long id)
+        {
+            return View(categorias.Where(m => m.CategoriaId == id).First());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Categoria categoria)
+        {
+            categorias.Remove(
+                categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First());
+            categorias.Add(categoria);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(long id)
+        {
+            return View(categorias.Where(m => m.CategoriaId == id).First());
+        }
+
+        public ActionResult Delete(long id)
+        {
+            return View(categorias.Where(m => m.CategoriaId == id).First());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(Categoria categoria)
+        {
+            categorias.Remove(
+                categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First());
+            return RedirectToAction("Index");
+        }
     }
 }
