@@ -1,7 +1,7 @@
 ﻿@model WebAppProjeto01.Models.Fabricante
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -19,11 +19,11 @@
             <dt>
                 @Html.DisplayNameFor(model => model.Nome)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Nome)
             </dd>
-    
+
         </dl>
     </div>
     <p>

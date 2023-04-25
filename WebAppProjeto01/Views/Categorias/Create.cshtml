@@ -1,7 +1,7 @@
 ﻿@model WebAppProjeto01.Models.Categoria
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -15,12 +15,12 @@
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    
-    
-    @using (Html.BeginForm()) 
+
+
+    @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        
+
         <div class="form-horizontal">
             <h4>Categoria</h4>
             <hr />
@@ -32,17 +32,17 @@
                     @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                    <input type="submit" value="Criar" class="btn btn-default" />
                 </div>
             </div>
         </div>
     }
-    
+
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Voltar paraa lista", "Index")
     </div>
 </body>
 </html>
