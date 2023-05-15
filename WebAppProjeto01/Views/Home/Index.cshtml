@@ -1,0 +1,56 @@
+﻿@model WebAppProjeto01.Models.Home
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Loja Virtual";
+}
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Fabricantes
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var item in Model.fabricantes)
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome);
+                    </td>
+                }
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Categorias
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var item in Model.categorias)
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                }
+            </tr>
+        </tbody>
+    </table>
+</div>
+@section styles{
+    <link href="@Url.Content("~/content/DataTables-1.10.2/css/dataTables.bootstrap.css")" rel="stylesheet" />
+}
+@section ScriptPage{
+    <script src="@Url.Content("~/scripts/DataTables-1.10.2/jquery.dataTables.js")"></script>
+    <script src="@Url.Content("~/scripts/DataTables-1.10.2/dataTables.bootstrap.js")"></script>
+}
