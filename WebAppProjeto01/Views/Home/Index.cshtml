@@ -27,7 +27,7 @@
     </table>
 </div>
 <div>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>
@@ -40,13 +40,15 @@
                 @foreach (var item in Model.categorias)
                 {
                     <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
+                        @Html.DisplayFor(modelItem => item.Nome);
                     </td>
                 }
             </tr>
         </tbody>
     </table>
 </div>
+
+
 @section styles{
     <link href="@Url.Content("~/content/DataTables-1.10.2/css/dataTables.bootstrap.css")" rel="stylesheet" />
 }
