@@ -9,5 +9,7 @@ namespace WebAppProjeto01.Models
     {
         public IQueryable<Fabricante> fabricantes;
         public IQueryable<Categoria> categorias;
+        public IQueryable<Produto> produtos;
+        public string filtro;
     }
 }
