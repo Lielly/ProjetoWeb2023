@@ -60,7 +60,7 @@
                         @Html.TextBox("logotipo", "", new { type = "file" }) <br />
                     </div>
                     <div class="form-group">
-                        @if (Model.Logotipo == null)
+                        @if (Model.NomeArquivo == null)
                         {
                             <div class="form-control-static">
                                 Nenhuma imagem adicionada
@@ -70,7 +70,7 @@
                         {
                             <div class="panel-body">
                                 <img class="img-thumbnail"
-                                     src="@Url.Action("GetLogotipo", "Produtos", new { id = Model.ProdutoId })"
+                                     src="@Url.Action("GetLogotipo2", "Produtos", new { id = Model.ProdutoId })"
                                      style="display:block; margin-left:auto; margin-right:auto;" />
                             </div>
                             <div class="panel-footer">
@@ -81,6 +81,7 @@
 
                                     </label>
                                 </div>
+                                @Html.ActionLink("Baixar o arquivo : " + Model.NomeArquivo, "DownloadArquivo2", "Produtos", new { area = "Cadastros", id = Model.ProdutoId }, null)
                             </div>
                         }
                     </div>
