@@ -123,6 +123,8 @@ namespace WebAppProjeto01.Controllers
                     if (chkRemoverImagem != null)
                     {
                         produto.Logotipo = null;
+                        produto.NomeArquivo = null;
+                        produto.TamanhoArquivo = 0;
                     }
                     if (logotipo != null)
                     {
@@ -213,8 +215,7 @@ namespace WebAppProjeto01.Controllers
                 {
                     var bytesLogotipo = new byte[produto.TamanhoArquivo];
                     FileStream fileStream = new
-                    FileStream(Server.MapPath("~/App_Data/" + produto.NomeArquivo), FileMode.Open,
-                    FileAccess.Read);
+                    FileStream(Server.MapPath("~/App_Data/" + produto.NomeArquivo), FileMode.Open, FileAccess.Read);
                     fileStream.Read(bytesLogotipo, 0, (int)produto.TamanhoArquivo);
                     return File(bytesLogotipo, produto.LogotipoMimeType);
                 }

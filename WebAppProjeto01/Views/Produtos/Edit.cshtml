@@ -55,6 +55,8 @@
 
                 @Html.HiddenFor(model => model.LogotipoMimeType)
                 @Html.HiddenFor(model => model.Logotipo)
+                @Html.HiddenFor(model => model.NomeArquivo)
+                @Html.HiddenFor(model => model.TamanhoArquivo)
                 <div class="col-md-offset-7 col-md-5">
                     <div class="form-group">
                         @Html.TextBox("logotipo", "", new { type = "file" }) <br />
